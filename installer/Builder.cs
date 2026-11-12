@@ -11,12 +11,13 @@ using System.Text;
 
 namespace MetaphorRemaster
 {
-    public class Part { public int Index; public string Name; public long Size; public string Sha256; }
-    public class Blob { public int Part; public long Offset; public int Stored; public int Raw; public int Method; }
+    public class Part { public int Index; public string Name; public long Size; public string Sha256; public string Url; }
+    public class Blob { public int Part; public long Offset; public int Stored; public int Raw; public int Method; public string Sha1; }
     public class FileRec
     {
         public string Out, Base, BaseSha1, OutSha1, Category;
         public long BaseSize, OutSize; public int Count; public int[] Keys; public int[] Blobs;
+        public bool[] Local;   // set by Pending: entry j is already in the installed file (update from an older release)
     }
     public class CpkEntry { public long Offset; public long Size; public long ExtractSize; }
 
@@ -53,10 +54,11 @@ namespace MetaphorRemaster
                         case "U": m.BaseUrl = t[1]; break;
                         case "P":
                             Part p = new Part(); p.Index = int.Parse(t[1]); p.Name = t[2]; p.Size = long.Parse(t[3]); p.Sha256 = t[4];
+                            if (t.Length > 5) p.Url = t[5];   // parts kept from an earlier release live at that release's URL
                             m.Parts.Add(p); break;
                         case "B":
                             Blob b = new Blob(); b.Part = int.Parse(t[2]); b.Offset = long.Parse(t[3]); b.Stored = int.Parse(t[4]);
-                            b.Raw = int.Parse(t[5]); b.Method = int.Parse(t[6]);
+                            b.Raw = int.Parse(t[5]); b.Method = int.Parse(t[6]); if (t.Length > 7) b.Sha1 = t[7];
                             if (int.Parse(t[1]) != m.Blobs.Count) throw new Exception("Manifest blobs out of order");
                             m.Blobs.Add(b); break;
                         case "F":
@@ -97,13 +99,62 @@ namespace MetaphorRemaster
         public List<Part> PartsFor(List<FileRec> files)
         {
             bool[] need = new bool[Parts.Count];
-            foreach (FileRec f in files) foreach (int b in f.Blobs) need[Blobs[b].Part] = true;
+            foreach (FileRec f in files)
+                for (int j = 0; j < f.Blobs.Length; j++)
+                    if (f.Local == null || !f.Local[j]) need[Blobs[f.Blobs[j]].Part] = true;
             List<Part> r = new List<Part>();
             for (int i = 0; i < Parts.Count; i++) if (need[i]) r.Add(Parts[i]);
             return r;
         }
 
         public static long SumOut(List<FileRec> files) { long s = 0; foreach (FileRec f in files) s += f.OutSize; return s; }
+
+        // entries of a .TEX file: {data offset, data length} each, or null when it is not a valid TEX
+        static List<long[]> ParseTex(byte[] b)
+        {
+            if (b.Length < 4) return null;
+            int n = (int)U32(b, 0); long p = 4; List<long[]> r = new List<long[]>();
+            for (int k = 0; k < n; k++)
+            {
+                if (p + 260 > b.Length) return null;
+                long sz = U32(b, (int)p + 256); if (p + 260 + sz > b.Length) return null;
+                r.Add(new long[] { p + 260, sz }); p += 260 + sz;
+            }
+            return p == b.Length ? r : null;
+        }
+
+        // Files that still have to be built. A file already installed and identical is skipped. When an older
+        // release's file is there, every entry it already holds (same SHA-1 as the new blob) is reused from it, so an
+        // update only downloads the parts with the new textures.
+        public List<FileRec> Pending(List<FileRec> files, string outRoot)
+        {
+            List<FileRec> r = new List<FileRec>(); long total = SumOut(files), done = 0; int i = 0; DateTime last = DateTime.MinValue;
+            foreach (FileRec f in files)
+            {
+                i++; done += f.OutSize;
+                if ((DateTime.Now - last).TotalMilliseconds > 400 || i == files.Count)
+                {
+                    Console.Write(string.Format("\r  checking installed files [{0}/{1}]  {2:0.0} / {3:0.0} GB   ", i, files.Count, done / 1e9, total / 1e9));
+                    last = DateTime.Now;
+                }
+                f.Local = new bool[f.Keys.Length];
+                string dest = Path.Combine(outRoot, f.Out.Replace('/', Path.DirectorySeparatorChar));
+                if (!File.Exists(dest)) { r.Add(f); continue; }
+                byte[] old = File.ReadAllBytes(dest);
+                if (old.LongLength == f.OutSize) using (SHA1 sh = SHA1.Create()) if (Hex(sh.ComputeHash(old)) == f.OutSha1) continue;
+                List<long[]> ents = ParseTex(old);
+                if (ents != null && ents.Count == f.Count)
+                    using (SHA1 sh = SHA1.Create())
+                        for (int j = 0; j < f.Keys.Length; j++)
+                        {
+                            Blob b = Blobs[f.Blobs[j]]; long[] e = ents[f.Keys[j]];
+                            if (b.Sha1 != null && e[1] == b.Raw && Hex(sh.ComputeHash(old, (int)e[0], (int)e[1])) == b.Sha1) f.Local[j] = true;
+                        }
+                r.Add(f);
+            }
+            Console.WriteLine();
+            return r;
+        }
 
         // ---- data parts ----
         public static string Hex(byte[] h) { StringBuilder sb = new StringBuilder(); foreach (byte x in h) sb.Append(x.ToString("x2")); return sb.ToString(); }
@@ -128,7 +179,7 @@ namespace MetaphorRemaster
         {
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; // TLS 1.2
             string dest = Path.Combine(dataDir, p.Name), tmp = dest + ".download";
-            string url = BaseUrl.TrimEnd('/') + "/" + p.Name;
+            string url = string.IsNullOrEmpty(p.Url) ? BaseUrl.TrimEnd('/') + "/" + p.Name : p.Url;
             for (int attempt = 1; ; attempt++)
             {
                 long have = File.Exists(tmp) ? new FileInfo(tmp).Length : 0;
@@ -297,6 +348,12 @@ namespace MetaphorRemaster
                         byte[] baseBytes = new byte[e.Size]; cf.Seek(e.Offset, SeekOrigin.Begin); ReadFully(cf, baseBytes, baseBytes.Length);
                         using (SHA1 sh = SHA1.Create()) if (Hex(sh.ComputeHash(baseBytes)) != f.BaseSha1) { res.GameDiffers++; res.Messages.Add("game file differs: " + f.Base); continue; }
                         Directory.CreateDirectory(Path.GetDirectoryName(dest));
+                        byte[] old = null; List<long[]> oldEnts = null;
+                        if (f.Local != null && Array.IndexOf(f.Local, true) >= 0 && File.Exists(dest))
+                        {
+                            old = File.ReadAllBytes(dest); oldEnts = ParseTex(old);
+                            if (oldEnts == null || oldEnts.Count != f.Count) { old = null; oldEnts = null; }
+                        }
                         string tmp = dest + ".tmp";
                         string outSha;
                         using (SHA1 sha = SHA1.Create())
@@ -312,7 +369,13 @@ namespace MetaphorRemaster
                                     int sz = (int)U32(baseBytes, p + 256);
                                     if (j < f.Keys.Length && f.Keys[j] == k)
                                     {
-                                        byte[] d = ReadBlob(f.Blobs[j], dataDir, parts); j++;
+                                        byte[] d;
+                                        if (oldEnts != null && f.Local[j])
+                                        {
+                                            long[] oe = oldEnts[k]; d = new byte[oe[1]]; Array.Copy(old, oe[0], d, 0, oe[1]);
+                                        }
+                                        else d = ReadBlob(f.Blobs[j], dataDir, parts);
+                                        j++;
                                         cs.Write(baseBytes, p, 256);
                                         byte[] len = { (byte)(d.Length >> 24), (byte)(d.Length >> 16), (byte)(d.Length >> 8), (byte)d.Length };
                                         cs.Write(len, 0, 4); cs.Write(d, 0, d.Length);

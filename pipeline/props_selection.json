@@ -1,0 +1,1754 @@
+{
+"002aa0110413": {
+"food": false,
+"wood": true
+},
+"00959530a60d": {
+"food": false,
+"wood": true
+},
+"00b2272c4c93": {
+"food": false,
+"wood": true
+},
+"01f258730f14": {
+"food": false,
+"wood": true
+},
+"01fa845a2c6d": {
+"food": true,
+"wood": true
+},
+"02ff60f31c7d": {
+"food": false,
+"wood": true
+},
+"048670dffb30": {
+"food": false,
+"wood": true
+},
+"04ab912bc4a7": {
+"food": false,
+"wood": true
+},
+"05a37b47e3b3": {
+"food": false,
+"wood": false
+},
+"05f86b7e9729": {
+"food": false,
+"wood": true
+},
+"06387b44ac90": {
+"food": true,
+"wood": true
+},
+"066281c67238": {
+"food": false,
+"wood": true
+},
+"0688d7058366": {
+"food": true,
+"wood": true
+},
+"06bdf1f35a92": {
+"food": false,
+"wood": true
+},
+"07e370e1f33b": {
+"food": false,
+"wood": true
+},
+"07eca6dfe68a": {
+"food": true,
+"wood": true
+},
+"0813b610123f": {
+"food": false,
+"wood": true
+},
+"08d526932db4": {
+"food": false,
+"wood": true
+},
+"08eb3745daa6": {
+"food": false,
+"wood": true
+},
+"096a43b285b1": {
+"food": true,
+"wood": true
+},
+"09ce0e627994": {
+"food": false,
+"wood": true
+},
+"0b6d16dc4cf2": {
+"food": true,
+"wood": true
+},
+"0ba88e9f0497": {
+"food": false,
+"wood": true
+},
+"0ceb5495b452": {
+"food": false,
+"wood": true
+},
+"0d87808aa66b": {
+"food": true,
+"wood": false
+},
+"0d9d8a400173": {
+"food": false,
+"wood": true
+},
+"0db094ef93fc": {
+"food": false,
+"wood": true
+},
+"0de5d4db7478": {
+"food": false,
+"wood": true
+},
+"0e0725b9775b": {
+"food": false,
+"wood": true
+},
+"0e33b4f3949f": {
+"food": false,
+"wood": true
+},
+"0e68b21f65d9": {
+"food": false,
+"wood": false
+},
+"1110ccf020ad": {
+"food": false,
+"wood": true
+},
+"112df4900aef": {
+"food": false,
+"wood": false
+},
+"113a2a3026d2": {
+"food": false,
+"wood": true
+},
+"11f329ecfd16": {
+"food": true,
+"wood": true
+},
+"130f7ee03a1d": {
+"food": false,
+"wood": true
+},
+"15dc52390273": {
+"food": false,
+"wood": true
+},
+"16821f1390e0": {
+"food": false,
+"wood": true
+},
+"17d9ec912644": {
+"food": false,
+"wood": true
+},
+"17e1a7f133f6": {
+"food": false,
+"wood": true
+},
+"199865385f73": {
+"food": true,
+"wood": true
+},
+"19f73ad04e6b": {
+"food": true,
+"wood": true
+},
+"1a27907b1b3e": {
+"food": false,
+"wood": true
+},
+"1a28647063e2": {
+"food": false,
+"wood": true
+},
+"1a31bd1bad6a": {
+"food": false,
+"wood": true
+},
+"1a7418f5130c": {
+"food": false,
+"wood": true
+},
+"1b4e9cb87603": {
+"food": false,
+"wood": true
+},
+"1b6a5cacd68d": {
+"food": true,
+"wood": true
+},
+"1be41a56482f": {
+"food": false,
+"wood": true
+},
+"1c2fba34f240": {
+"food": false,
+"wood": true
+},
+"1c68664dd551": {
+"food": false,
+"wood": true
+},
+"1c9c3b2c7be2": {
+"food": false,
+"wood": true
+},
+"1cecb3f16ba7": {
+"food": false,
+"wood": true
+},
+"1d76258dd419": {
+"food": false,
+"wood": true
+},
+"1d91c48728c0": {
+"food": false,
+"wood": true
+},
+"1dd92cd19dbc": {
+"food": false,
+"wood": true
+},
+"1e1b8ceade01": {
+"food": false,
+"wood": true
+},
+"1e3c7976a9fd": {
+"food": false,
+"wood": true
+},
+"1f76574f077e": {
+"food": false,
+"wood": true
+},
+"2084bbea0f7b": {
+"food": false,
+"wood": true
+},
+"2133d6b67d2f": {
+"food": false,
+"wood": true
+},
+"2163d989ec73": {
+"food": false,
+"wood": true
+},
+"21edef672d9f": {
+"food": false,
+"wood": true
+},
+"22a0168a2a34": {
+"food": false,
+"wood": true
+},
+"22ded6bc2e1d": {
+"food": false,
+"wood": true
+},
+"22e8d2de75c2": {
+"food": false,
+"wood": true
+},
+"2369c21d159e": {
+"food": false,
+"wood": true
+},
+"23812174503c": {
+"food": false,
+"wood": true
+},
+"248fe711ad62": {
+"food": true,
+"wood": true
+},
+"2491fe4e869e": {
+"food": false,
+"wood": true
+},
+"249edf85a48d": {
+"food": true,
+"wood": true
+},
+"2523b2e407eb": {
+"food": false,
+"wood": true
+},
+"25362428b16f": {
+"food": true,
+"wood": true
+},
+"26468a5fc7f2": {
+"food": false,
+"wood": true
+},
+"2745c1a7e6a9": {
+"food": false,
+"wood": true
+},
+"277d0f97d47a": {
+"food": false,
+"wood": true
+},
+"27c07d3362d0": {
+"food": false,
+"wood": true
+},
+"27d77374dff4": {
+"food": false,
+"wood": true
+},
+"27fa20335b8e": {
+"food": false,
+"wood": true
+},
+"29d61072e580": {
+"food": true,
+"wood": true
+},
+"29d8bd2a03c8": {
+"food": true,
+"wood": true
+},
+"2ac720bd1b0e": {
+"food": false,
+"wood": true
+},
+"2acd239a6700": {
+"food": true,
+"wood": false
+},
+"2bdff1e49a1a": {
+"food": false,
+"wood": true
+},
+"2bfea56e8187": {
+"food": false,
+"wood": true
+},
+"2c6aee5a0c9f": {
+"food": true,
+"wood": true
+},
+"2c862cfc041a": {
+"food": false,
+"wood": false
+},
+"2de1e2b8c8c2": {
+"food": true,
+"wood": true
+},
+"2ee28df476ac": {
+"food": true,
+"wood": true
+},
+"2fb9906c8616": {
+"food": false,
+"wood": true
+},
+"2fed27ca952d": {
+"food": false,
+"wood": true
+},
+"3058a6ac7ab1": {
+"food": false,
+"wood": true
+},
+"30beb7cc1727": {
+"food": true,
+"wood": true
+},
+"3105f09cefac": {
+"food": false,
+"wood": true
+},
+"3176c477fcdb": {
+"food": false,
+"wood": true
+},
+"328716db7824": {
+"food": false,
+"wood": true
+},
+"3287fd765dd4": {
+"food": true,
+"wood": false
+},
+"338b3f0e1ac9": {
+"food": false,
+"wood": true
+},
+"351a86c319e6": {
+"food": false,
+"wood": true
+},
+"3628d4322e68": {
+"food": false,
+"wood": true
+},
+"3919a5a1949e": {
+"food": false,
+"wood": true
+},
+"39d121e65bf5": {
+"food": false,
+"wood": true
+},
+"3a75ad521a42": {
+"food": false,
+"wood": true
+},
+"3b61108b428d": {
+"food": false,
+"wood": true
+},
+"3c6414da8bd3": {
+"food": false,
+"wood": true
+},
+"3c7829cb428e": {
+"food": false,
+"wood": true
+},
+"3cc94c99c563": {
+"food": false,
+"wood": true
+},
+"3cd40eb96a9f": {
+"food": false,
+"wood": true
+},
+"3d9182dd97e4": {
+"food": true,
+"wood": false
+},
+"3e01b38b0183": {
+"food": false,
+"wood": true
+},
+"3e3c32107b83": {
+"food": false,
+"wood": true
+},
+"3e826f3a3a79": {
+"food": false,
+"wood": true
+},
+"3edd10442b85": {
+"food": true,
+"wood": true
+},
+"3eff6df04246": {
+"food": false,
+"wood": true
+},
+"410d6aaa1e4f": {
+"food": true,
+"wood": true
+},
+"41608f5cc7a2": {
+"food": false,
+"wood": true
+},
+"41c1405b7af4": {
+"food": true,
+"wood": true
+},
+"42b568cc5997": {
+"food": false,
+"wood": true
+},
+"44007db9ec77": {
+"food": false,
+"wood": true
+},
+"448e8bc5030d": {
+"food": false,
+"wood": true
+},
+"44cc9cc0af44": {
+"food": false,
+"wood": true
+},
+"455900aba171": {
+"food": false,
+"wood": true
+},
+"469b41ca6f2f": {
+"food": false,
+"wood": true
+},
+"46a00beba4d4": {
+"food": true,
+"wood": true
+},
+"46c6f5ca398d": {
+"food": true,
+"wood": true
+},
+"47086dda610e": {
+"food": false,
+"wood": true
+},
+"4814c6df8ab1": {
+"food": false,
+"wood": true
+},
+"485ac19e7f36": {
+"food": false,
+"wood": true
+},
+"48d9ecfb198d": {
+"food": false,
+"wood": true
+},
+"48ff58a27d03": {
+"food": true,
+"wood": false
+},
+"49032ecd46a7": {
+"food": false,
+"wood": true
+},
+"491a98bafe35": {
+"food": true,
+"wood": true
+},
+"491f0b96b348": {
+"food": false,
+"wood": true
+},
+"4b060a052a62": {
+"food": false,
+"wood": true
+},
+"4d6bc058ac55": {
+"food": false,
+"wood": true
+},
+"4eaa7859b4d8": {
+"food": true,
+"wood": true
+},
+"4efcb0e68a72": {
+"food": false,
+"wood": true
+},
+"4f254031ae0e": {
+"food": false,
+"wood": true
+},
+"4f7cb06c08b9": {
+"food": true,
+"wood": false
+},
+"50a8ce29340c": {
+"food": false,
+"wood": true
+},
+"51120101d2be": {
+"food": false,
+"wood": true
+},
+"51448f2b395d": {
+"food": false,
+"wood": true
+},
+"519708ac51f2": {
+"food": false,
+"wood": true
+},
+"5295920c4938": {
+"food": false,
+"wood": true
+},
+"52a66e4a644e": {
+"food": false,
+"wood": true
+},
+"52c0315fd965": {
+"food": true,
+"wood": true
+},
+"53ce4a8faa51": {
+"food": false,
+"wood": true
+},
+"54d68c4dea80": {
+"food": false,
+"wood": true
+},
+"55d131ec214a": {
+"food": true,
+"wood": true
+},
+"55fc4e1c9012": {
+"food": false,
+"wood": true
+},
+"5683a6393c6b": {
+"food": false,
+"wood": true
+},
+"56d9dc99c318": {
+"food": false,
+"wood": true
+},
+"571e4229b098": {
+"food": false,
+"wood": true
+},
+"57494f90b095": {
+"food": false,
+"wood": true
+},
+"5832d05f4c43": {
+"food": false,
+"wood": true
+},
+"5945e5f92d96": {
+"food": false,
+"wood": true
+},
+"595d3cb14f9b": {
+"food": false,
+"wood": true
+},
+"5a3802fa5b64": {
+"food": false,
+"wood": true
+},
+"5a3d79903e85": {
+"food": false,
+"wood": true
+},
+"5ab2eda36735": {
+"food": false,
+"wood": true
+},
+"5b34b3cb31a3": {
+"food": false,
+"wood": true
+},
+"5c7c26e36489": {
+"food": false,
+"wood": true
+},
+"5cccd07dd7cd": {
+"food": false,
+"wood": true
+},
+"5d6e9ae9b416": {
+"food": false,
+"wood": true
+},
+"5df18088839b": {
+"food": false,
+"wood": true
+},
+"5e83e04ef26b": {
+"food": false,
+"wood": true
+},
+"5f2f2fcca60e": {
+"food": false,
+"wood": true
+},
+"5fcdf6cefd7a": {
+"food": false,
+"wood": true
+},
+"5ff803cd9823": {
+"food": true,
+"wood": true
+},
+"612de62f520b": {
+"food": false,
+"wood": true
+},
+"62d60fa9b645": {
+"food": false,
+"wood": true
+},
+"637935c4bb64": {
+"food": false,
+"wood": true
+},
+"64391154213b": {
+"food": false,
+"wood": true
+},
+"645f932191b8": {
+"food": false,
+"wood": true
+},
+"650cc53afa0e": {
+"food": false,
+"wood": true
+},
+"658d1ec9842d": {
+"food": false,
+"wood": true
+},
+"668d0ed50b25": {
+"food": false,
+"wood": true
+},
+"67384abe2a09": {
+"food": false,
+"wood": true
+},
+"678926f95cb4": {
+"food": false,
+"wood": true
+},
+"68196cdadec5": {
+"food": false,
+"wood": true
+},
+"68ecf220baea": {
+"food": false,
+"wood": true
+},
+"69ee8237f2ae": {
+"food": false,
+"wood": true
+},
+"6b24c7d491b9": {
+"food": false,
+"wood": true
+},
+"6b653046509a": {
+"food": true,
+"wood": true
+},
+"6c5f43b339a6": {
+"food": false,
+"wood": true
+},
+"6c983f1233e4": {
+"food": false,
+"wood": true
+},
+"6d2c2d6d94a4": {
+"food": false,
+"wood": true
+},
+"6d5993448924": {
+"food": false,
+"wood": true
+},
+"6d5fdefff90c": {
+"food": false,
+"wood": true
+},
+"6d9429a6ef6b": {
+"food": false,
+"wood": true
+},
+"6dced25fdb86": {
+"food": false,
+"wood": true
+},
+"6dfaea48b943": {
+"food": false,
+"wood": false
+},
+"6e42ec908a28": {
+"food": true,
+"wood": false
+},
+"6e6a24b18019": {
+"food": false,
+"wood": true
+},
+"6e92e5893cfc": {
+"food": false,
+"wood": true
+},
+"6ffd020cbeed": {
+"food": false,
+"wood": true
+},
+"70d7cb991b32": {
+"food": false,
+"wood": true
+},
+"72882f07ab33": {
+"food": false,
+"wood": true
+},
+"74716f0b3134": {
+"food": false,
+"wood": true
+},
+"74adab787e55": {
+"food": false,
+"wood": true
+},
+"751988964409": {
+"food": false,
+"wood": true
+},
+"75cca9893936": {
+"food": false,
+"wood": true
+},
+"75fc87848f43": {
+"food": false,
+"wood": true
+},
+"761f5c45eee4": {
+"food": false,
+"wood": true
+},
+"768200429af7": {
+"food": false,
+"wood": true
+},
+"76a0c62e443d": {
+"food": true,
+"wood": true
+},
+"77b1297d65b7": {
+"food": false,
+"wood": true
+},
+"77c7837bd7f2": {
+"food": false,
+"wood": true
+},
+"78b4de6330ed": {
+"food": false,
+"wood": true
+},
+"7a54025a761e": {
+"food": true,
+"wood": false
+},
+"7ccd16dee98f": {
+"food": false,
+"wood": true
+},
+"7d76da40f3b5": {
+"food": false,
+"wood": true
+},
+"7d8a61499586": {
+"food": false,
+"wood": true
+},
+"7db433ddbc46": {
+"food": true,
+"wood": false
+},
+"7e3127436844": {
+"food": true,
+"wood": true
+},
+"7f9ca07c77b5": {
+"food": false,
+"wood": true
+},
+"805943ba5d29": {
+"food": false,
+"wood": true
+},
+"80bb26ac63ce": {
+"food": true,
+"wood": false
+},
+"80cc53ea5083": {
+"food": false,
+"wood": true
+},
+"80fb6384afc4": {
+"food": true,
+"wood": true
+},
+"81c2baf3c651": {
+"food": false,
+"wood": true
+},
+"81fdf30feba8": {
+"food": false,
+"wood": true
+},
+"8211a6b84755": {
+"food": false,
+"wood": true
+},
+"824bea343623": {
+"food": false,
+"wood": true
+},
+"82d5ff9efe8c": {
+"food": false,
+"wood": true
+},
+"83f89d6b20ae": {
+"food": false,
+"wood": true
+},
+"8444d323fbfd": {
+"food": false,
+"wood": true
+},
+"852f71db7abf": {
+"food": false,
+"wood": true
+},
+"8585a0332217": {
+"food": false,
+"wood": true
+},
+"870ef663f9de": {
+"food": true,
+"wood": true
+},
+"870f30eeef79": {
+"food": true,
+"wood": true
+},
+"8776666bf3ee": {
+"food": false,
+"wood": true
+},
+"878cec8b01ed": {
+"food": false,
+"wood": true
+},
+"87a2742f6d18": {
+"food": false,
+"wood": true
+},
+"87b8f4ae4d02": {
+"food": false,
+"wood": true
+},
+"888a832bc3e2": {
+"food": false,
+"wood": true
+},
+"8981972e2a05": {
+"food": false,
+"wood": true
+},
+"8ac9d5312490": {
+"food": false,
+"wood": true
+},
+"8b4901286856": {
+"food": false,
+"wood": true
+},
+"8c2d7baec619": {
+"food": true,
+"wood": true
+},
+"8c5339e40ce4": {
+"food": false,
+"wood": true
+},
+"8d57e14a4dac": {
+"food": false,
+"wood": true
+},
+"8dec73072caf": {
+"food": false,
+"wood": true
+},
+"8e00de755314": {
+"food": false,
+"wood": true
+},
+"8e96c92a49c0": {
+"food": false,
+"wood": false
+},
+"8f2f77855e55": {
+"food": true,
+"wood": true
+},
+"8fb951f2d5b6": {
+"food": false,
+"wood": true
+},
+"91f8deb8fb01": {
+"food": false,
+"wood": true
+},
+"9257c7012f4d": {
+"food": false,
+"wood": true
+},
+"9324574a375c": {
+"food": false,
+"wood": true
+},
+"93d016132c41": {
+"food": false,
+"wood": true
+},
+"9484cf871dd9": {
+"food": false,
+"wood": false
+},
+"95daca89612a": {
+"food": false,
+"wood": true
+},
+"960e24fed0c0": {
+"food": false,
+"wood": true
+},
+"9656ad295a23": {
+"food": true,
+"wood": true
+},
+"9674ecd89de6": {
+"food": false,
+"wood": true
+},
+"96af9570b767": {
+"food": false,
+"wood": true
+},
+"975970147d70": {
+"food": false,
+"wood": true
+},
+"984bce912eef": {
+"food": false,
+"wood": false
+},
+"9a114ad5ba4f": {
+"food": false,
+"wood": true
+},
+"9aaf690bd122": {
+"food": true,
+"wood": true
+},
+"9cadc7c54987": {
+"food": true,
+"wood": true
+},
+"9d264ef81995": {
+"food": false,
+"wood": true
+},
+"9e663a695218": {
+"food": true,
+"wood": true
+},
+"9e851bc55903": {
+"food": false,
+"wood": true
+},
+"9f088a2bfa84": {
+"food": true,
+"wood": true
+},
+"9f2a751429c5": {
+"food": false,
+"wood": true
+},
+"9fbfe195f889": {
+"food": false,
+"wood": true
+},
+"9ff686ad8212": {
+"food": false,
+"wood": true
+},
+"a047edf7e39c": {
+"food": true,
+"wood": true
+},
+"a121182ec716": {
+"food": false,
+"wood": true
+},
+"a18fcfedbb76": {
+"food": false,
+"wood": true
+},
+"a289c47ae5c7": {
+"food": false,
+"wood": true
+},
+"a28b98c2bdde": {
+"food": false,
+"wood": true
+},
+"a2f1183973f7": {
+"food": true,
+"wood": true
+},
+"a32e3eb205ce": {
+"food": false,
+"wood": true
+},
+"a3b5ddd42e3c": {
+"food": true,
+"wood": true
+},
+"a42b2747d45e": {
+"food": false,
+"wood": true
+},
+"a6cf36b2e797": {
+"food": false,
+"wood": true
+},
+"a889bce48326": {
+"food": true,
+"wood": true
+},
+"a8a053035c4f": {
+"food": false,
+"wood": true
+},
+"a9e6db5cf37e": {
+"food": false,
+"wood": true
+},
+"aa4fa8802d4d": {
+"food": true,
+"wood": true
+},
+"abbf53e96c44": {
+"food": false,
+"wood": true
+},
+"abc1993ec071": {
+"food": false,
+"wood": true
+},
+"adfb05fdf784": {
+"food": true,
+"wood": true
+},
+"ae838512b61a": {
+"food": false,
+"wood": true
+},
+"af01b1e25636": {
+"food": false,
+"wood": true
+},
+"af195be9779c": {
+"food": false,
+"wood": true
+},
+"afd83e977f3b": {
+"food": true,
+"wood": false
+},
+"b0735a78cd16": {
+"food": true,
+"wood": true
+},
+"b0a77bdb8c69": {
+"food": false,
+"wood": true
+},
+"b113c2d23aec": {
+"food": false,
+"wood": true
+},
+"b16da23769b0": {
+"food": false,
+"wood": true
+},
+"b1cf00484a15": {
+"food": true,
+"wood": true
+},
+"b2907bdbe634": {
+"food": false,
+"wood": true
+},
+"b309e6349ad3": {
+"food": false,
+"wood": true
+},
+"b323e14e1d68": {
+"food": false,
+"wood": true
+},
+"b49abff0266e": {
+"food": false,
+"wood": false
+},
+"b5fe9e37622b": {
+"food": false,
+"wood": true
+},
+"b716e86ed4ec": {
+"food": false,
+"wood": true
+},
+"b728218c741d": {
+"food": false,
+"wood": true
+},
+"b80f9f038246": {
+"food": false,
+"wood": true
+},
+"b862be9c16cd": {
+"food": false,
+"wood": true
+},
+"b8ca3673aeb5": {
+"food": true,
+"wood": true
+},
+"ba07b3001c25": {
+"food": false,
+"wood": true
+},
+"bb5db18003c3": {
+"food": true,
+"wood": true
+},
+"bb5eb9fa6655": {
+"food": false,
+"wood": true
+},
+"bb7244f03191": {
+"food": false,
+"wood": true
+},
+"bcfaada536aa": {
+"food": false,
+"wood": true
+},
+"bd16881ff2fe": {
+"food": false,
+"wood": true
+},
+"bd473d69bb9e": {
+"food": false,
+"wood": false
+},
+"bf9a4bd9c5a6": {
+"food": false,
+"wood": true
+},
+"bfb82cccb0db": {
+"food": false,
+"wood": true
+},
+"c072d0d4a765": {
+"food": false,
+"wood": true
+},
+"c145b10478e6": {
+"food": false,
+"wood": true
+},
+"c16013cd2464": {
+"food": true,
+"wood": true
+},
+"c1e21165474f": {
+"food": false,
+"wood": true
+},
+"c1f6fbedfb1c": {
+"food": false,
+"wood": true
+},
+"c3331bc49b81": {
+"food": false,
+"wood": true
+},
+"c66246e37e2e": {
+"food": false,
+"wood": true
+},
+"c68a412e9eb1": {
+"food": false,
+"wood": true
+},
+"c6967b53fcb7": {
+"food": false,
+"wood": true
+},
+"c76a2540e1e7": {
+"food": false,
+"wood": true
+},
+"c80e99c89651": {
+"food": false,
+"wood": true
+},
+"c948dc5e2977": {
+"food": false,
+"wood": true
+},
+"c955371b2f1f": {
+"food": true,
+"wood": true
+},
+"cd3f562b04fa": {
+"food": false,
+"wood": true
+},
+"ce06237a002e": {
+"food": true,
+"wood": true
+},
+"ce3fa64db826": {
+"food": false,
+"wood": true
+},
+"ce79259d5026": {
+"food": false,
+"wood": true
+},
+"ceefb9bacc34": {
+"food": true,
+"wood": true
+},
+"cef5a4a628ab": {
+"food": false,
+"wood": true
+},
+"cfbf8afa0a85": {
+"food": true,
+"wood": true
+},
+"cfd9d120127d": {
+"food": false,
+"wood": true
+},
+"d07e86fe05a7": {
+"food": true,
+"wood": false
+},
+"d0e065c7e200": {
+"food": true,
+"wood": true
+},
+"d1958e1edd8a": {
+"food": false,
+"wood": true
+},
+"d1f6a5904c9c": {
+"food": false,
+"wood": true
+},
+"d29d8867397c": {
+"food": true,
+"wood": true
+},
+"d2d4db284a2d": {
+"food": false,
+"wood": true
+},
+"d31b2d0af0be": {
+"food": false,
+"wood": true
+},
+"d41ead1bac2f": {
+"food": false,
+"wood": true
+},
+"d498d492da32": {
+"food": true,
+"wood": true
+},
+"d531a8e51926": {
+"food": false,
+"wood": true
+},
+"d6a9023f6049": {
+"food": false,
+"wood": true
+},
+"d707873c42e6": {
+"food": false,
+"wood": true
+},
+"d75975d7b34f": {
+"food": false,
+"wood": true
+},
+"d75d3b134dc1": {
+"food": true,
+"wood": false
+},
+"d7775757f54c": {
+"food": false,
+"wood": true
+},
+"d7e2d58b8398": {
+"food": true,
+"wood": true
+},
+"d7f6b19d75f4": {
+"food": false,
+"wood": true
+},
+"d826bfbf419b": {
+"food": false,
+"wood": true
+},
+"d87006020a5c": {
+"food": false,
+"wood": true
+},
+"d88092af3189": {
+"food": false,
+"wood": true
+},
+"d99eb2ce0fd3": {
+"food": false,
+"wood": true
+},
+"d9b3fdb55877": {
+"food": false,
+"wood": true
+},
+"d9b902573142": {
+"food": false,
+"wood": true
+},
+"da321723a062": {
+"food": true,
+"wood": true
+},
+"da6d3aac71cf": {
+"food": false,
+"wood": true
+},
+"dab812aa43a4": {
+"food": false,
+"wood": true
+},
+"db27d2223fec": {
+"food": false,
+"wood": true
+},
+"db3e09720632": {
+"food": false,
+"wood": true
+},
+"dbb1ee96c519": {
+"food": false,
+"wood": true
+},
+"dca883e2e277": {
+"food": false,
+"wood": true
+},
+"dce5d7d6e1e4": {
+"food": false,
+"wood": true
+},
+"dd51f01a0231": {
+"food": false,
+"wood": true
+},
+"dd8cee3b467c": {
+"food": false,
+"wood": true
+},
+"dd950222011d": {
+"food": false,
+"wood": true
+},
+"dd9950965598": {
+"food": false,
+"wood": true
+},
+"dda1673c9237": {
+"food": true,
+"wood": true
+},
+"ddfa5e69bbfa": {
+"food": false,
+"wood": true
+},
+"de191672e4ba": {
+"food": false,
+"wood": true
+},
+"df42ec81fde7": {
+"food": true,
+"wood": true
+},
+"dfe43d8158db": {
+"food": false,
+"wood": true
+},
+"e0b0486576b5": {
+"food": true,
+"wood": true
+},
+"e1b29060c30f": {
+"food": false,
+"wood": true
+},
+"e1d764bebd6f": {
+"food": false,
+"wood": true
+},
+"e26de98ceb70": {
+"food": false,
+"wood": true
+},
+"e277c0371e98": {
+"food": false,
+"wood": true
+},
+"e47841f58ebe": {
+"food": true,
+"wood": true
+},
+"e47e5ceca14e": {
+"food": false,
+"wood": true
+},
+"e513cabb2438": {
+"food": true,
+"wood": true
+},
+"e5517f34aa29": {
+"food": false,
+"wood": true
+},
+"e55494285302": {
+"food": true,
+"wood": true
+},
+"e5f98dc301bb": {
+"food": false,
+"wood": true
+},
+"e60964d38327": {
+"food": false,
+"wood": true
+},
+"e69a169763a3": {
+"food": false,
+"wood": true
+},
+"e726e96a3b7d": {
+"food": false,
+"wood": true
+},
+"e8385e618b31": {
+"food": false,
+"wood": true
+},
+"e8534992ef02": {
+"food": false,
+"wood": true
+},
+"e99da1f79d05": {
+"food": false,
+"wood": true
+},
+"e9ac952a1a02": {
+"food": false,
+"wood": true
+},
+"e9e673c2490f": {
+"food": false,
+"wood": true
+},
+"ea97bd4c1bda": {
+"food": false,
+"wood": true
+},
+"eaba94e8f32c": {
+"food": true,
+"wood": true
+},
+"eadb09ccb84e": {
+"food": true,
+"wood": false
+},
+"eb26d26cdf57": {
+"food": false,
+"wood": true
+},
+"eb2d79316533": {
+"food": false,
+"wood": true
+},
+"eb710c9915be": {
+"food": false,
+"wood": false
+},
+"ebfa6f2ebde2": {
+"food": false,
+"wood": true
+},
+"ecd0cd1f9cd1": {
+"food": false,
+"wood": true
+},
+"ecf41183e043": {
+"food": false,
+"wood": true
+},
+"edf486a559c1": {
+"food": true,
+"wood": false
+},
+"ef35ad64cbb7": {
+"food": false,
+"wood": true
+},
+"f1ae3d6df1b4": {
+"food": true,
+"wood": false
+},
+"f1cecfe9ab5a": {
+"food": false,
+"wood": true
+},
+"f2cb99db130a": {
+"food": false,
+"wood": true
+},
+"f2e34c29fccb": {
+"food": false,
+"wood": true
+},
+"f31a5b4b95c3": {
+"food": true,
+"wood": true
+},
+"f393b073d640": {
+"food": false,
+"wood": true
+},
+"f3b5105781e9": {
+"food": false,
+"wood": true
+},
+"f3e78e603c8a": {
+"food": false,
+"wood": true
+},
+"f4555e178af6": {
+"food": false,
+"wood": true
+},
+"f4dbb57ad0df": {
+"food": false,
+"wood": true
+},
+"f542410e1d25": {
+"food": false,
+"wood": true
+},
+"f549f9483c2f": {
+"food": false,
+"wood": true
+},
+"f614edd061df": {
+"food": false,
+"wood": true
+},
+"f624fbe0fe0c": {
+"food": false,
+"wood": true
+},
+"f6d3723c8006": {
+"food": true,
+"wood": true
+},
+"f6ddebb9d3be": {
+"food": true,
+"wood": true
+},
+"f75cf81b7a07": {
+"food": false,
+"wood": true
+},
+"f8113b3f3033": {
+"food": false,
+"wood": true
+},
+"f822b097f80f": {
+"food": false,
+"wood": true
+},
+"f82bd3ce440b": {
+"food": false,
+"wood": true
+},
+"f937b7d557c3": {
+"food": true,
+"wood": true
+},
+"f9fd76a5905d": {
+"food": false,
+"wood": true
+},
+"fa20feb5ff77": {
+"food": false,
+"wood": true
+},
+"fb13b513f596": {
+"food": false,
+"wood": true
+},
+"fb60c6dafa7c": {
+"food": false,
+"wood": true
+},
+"fbbc546a34f5": {
+"food": false,
+"wood": true
+},
+"fc5e2d634eee": {
+"food": false,
+"wood": true
+},
+"fc97fc40b9c5": {
+"food": false,
+"wood": true
+},
+"fe01f9728100": {
+"food": false,
+"wood": true
+},
+"fe2a5152686c": {
+"food": false,
+"wood": true
+},
+"fe9ba85994f2": {
+"food": false,
+"wood": true
+},
+"feb543a31832": {
+"food": false,
+"wood": true
+},
+"fee52df10e87": {
+"food": false,
+"wood": true
+}
+}

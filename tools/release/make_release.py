@@ -5,8 +5,12 @@ content, raw-deflate compressed, packed into part files below the host's per-fil
 rebuild each file from the player's own base.cpk plus those blobs, with SHA-1 checks of the base and of the result.
 No unmodified game data ends up in the parts.
 
-usage: python -I make_release.py <base.cpk> <out dir> <version> <download base url> <mod CPK dir> [<mod CPK dir> ...]
+usage: python -I make_release.py [--prev <earlier release dir>] <base.cpk> <out dir> <version> <download base url>
+                                 <mod CPK dir> [<mod CPK dir> ...]
        (each <mod CPK dir> is a folder whose sub-paths mirror base.cpk, e.g. .../MFEssentials/CPK/Upscale)
+--prev: patch release. Blobs the earlier release already has stay in its parts (the manifest gives those parts the
+       earlier release's URL); only new blobs go into new parts. The installer reuses the entries an installed file
+       already holds, so an update only downloads the new parts.
 """
 import sys, os, struct, hashlib, zlib, gzip, json, time, collections
 from multiprocessing import Pool
@@ -103,7 +107,20 @@ def category(p):
 
 
 def main():
-    cpk, outdir, version, url = sys.argv[1:5]; roots = sys.argv[5:]
+    args = sys.argv[1:]; prev = None
+    if '--prev' in args: i = args.index('--prev'); prev = args[i + 1]; del args[i:i + 2]
+    cpk, outdir, version, url = args[:4]; roots = args[4:]
+    prevU, prevP, prevB = None, [], {}
+    if prev:
+        with gzip.open(os.path.join(prev, 'manifest.txt.gz'), 'rt', encoding='utf-8') as g:
+            for line in g:
+                t = line.split()
+                if not t: continue
+                if t[0] == 'U': prevU = t[1]
+                elif t[0] == 'P': prevP.append(dict(name=t[2], size=int(t[3]), sha256=t[4], url=t[5] if len(t) > 5 else None))
+                elif t[0] == 'B': prevB.setdefault(t[7], tuple(int(x) for x in t[2:7]))
+        for q in prevP: q['url'] = q['url'] or prevU.rstrip('/') + '/' + q['name']
+        print(f'patch on top of {prev}: {len(prevP)} parts, {len(prevB)} blobs', flush=True)
     os.makedirs(outdir, exist_ok=True); t0 = time.time()
     toc = load_toc(cpk)
     jobs, seen = [], {}
@@ -131,21 +148,32 @@ def main():
             if h not in blobs: blobs[h] = len(blist); blist.append((h, recs[p]['src'], off, ln))
     raw_total = sum(b[3] for b in blist)
     print(f'{len(blist)} unique new entries, {raw_total / 1e9:.2f} GB raw', flush=True)
-    parts, binfo, cur, cur_size = [], [None] * len(blist), None, 0
+    # patch: blobs already in the earlier release stay where they are
+    binfo = [None] * len(blist)
+    old_used = sorted({prevB[h][0] for h, *_ in blist if h in prevB})
+    old_map = {pi: i for i, pi in enumerate(old_used)}
+    parts = [(prevP[pi]['name'], prevP[pi]['size'], prevP[pi]['sha256'], prevP[pi]['url']) for pi in old_used]
+    for i, (h, *_ ) in enumerate(blist):
+        if h in prevB: pi, off, sl, rl, meth = prevB[h]; binfo[i] = (old_map[pi], off, sl, rl, meth)
+    new_ids = [i for i in range(len(blist)) if binfo[i] is None]
+    print(f'{len(blist) - len(new_ids)} blobs reused from {len(old_used)} earlier parts, {len(new_ids)} new '
+          f'({sum(blist[i][3] for i in new_ids) / 1e9:.2f} GB raw)', flush=True)
+    cur, cur_size, n_new = None, 0, 0
     def close_part():
-        if cur: cur[1].close(); parts.append((cur[0], cur_size, cur[2].hexdigest()))
+        if cur: cur[1].close(); parts.append((cur[0], cur_size, cur[2].hexdigest(), None))
     with Pool(10) as pool:
-        for i, (meth, data) in enumerate(pool.imap(pack_blob, [(s, o, l) for _, s, o, l in blist], chunksize=8)):
+        for j, (meth, data) in enumerate(pool.imap(pack_blob, [blist[i][1:] for i in new_ids], chunksize=8)):
+            i = new_ids[j]
             if cur is None or cur_size + len(data) > PART_MAX:
-                close_part()
-                name = f'MetaphorRemaster-{version}.part{len(parts) + 1:02d}.bin'
+                close_part(); n_new += 1
+                name = f'MetaphorRemaster-{version}.part{n_new:02d}.bin'
                 cur = (name, open(os.path.join(outdir, name), 'wb'), hashlib.sha256()); cur_size = 0
             cur[1].write(data); cur[2].update(data)
             binfo[i] = (len(parts), cur_size, len(data), blist[i][3], meth); cur_size += len(data)
-            if i % 2000 == 0: print(f'  packed {i}/{len(blist)}  {time.time() - t0:.0f}s', flush=True)
+            if j % 2000 == 0: print(f'  packed {j}/{len(new_ids)}  {time.time() - t0:.0f}s', flush=True)
         close_part()
     lines = ['METAPHOR-REMASTER-MANIFEST 1', f'V {version}', f'U {url}']
-    for i, (n, s, h) in enumerate(parts): lines.append(f'P {i} {n} {s} {h}')
+    for i, (n, s, h, u) in enumerate(parts): lines.append(f'P {i} {n} {s} {h}' + (f' {u}' if u else ''))
     for i, (h, *_ ) in enumerate(blist):
         pi, off, sl, rl, meth = binfo[i]; lines.append(f'B {i} {pi} {off} {sl} {rl} {meth} {h}')
     for p in sorted(recs):
@@ -155,12 +183,13 @@ def main():
     cats = collections.Counter(); cnt = collections.Counter()
     for p, r in recs.items(): cats[category(p)] += r['out_size']; cnt[category(p)] += 1
     summary = dict(version=version, files=len(recs), out_bytes=sum(r['out_size'] for r in recs.values()),
-                   blobs=len(blist), raw_bytes=raw_total, packed_bytes=sum(s for _, s, _ in parts),
-                   parts=[dict(name=n, size=s, sha256=h) for n, s, h in parts],
+                   blobs=len(blist), raw_bytes=raw_total, packed_bytes=sum(s for _, s, _, _ in parts),
+                   new_bytes=sum(s for _, s, _, u in parts if not u), prev=prev,
+                   parts=[dict(name=n, size=s, sha256=h, **({'url': u, 'reused': True} if u else {})) for n, s, h, u in parts],
                    by_category={c: dict(files=cnt[c], out_bytes=cats[c]) for c in cats})
     json.dump(summary, open(os.path.join(outdir, 'release_summary.json'), 'w'), indent=1)
     print(json.dumps({k: v for k, v in summary.items() if k != 'parts'}, indent=1))
-    print(f'{len(parts)} parts, done in {time.time() - t0:.0f}s')
+    print(f'{len(parts)} parts ({sum(1 for p in parts if not p[3])} new), done in {time.time() - t0:.0f}s')
 
 
 if __name__ == '__main__':

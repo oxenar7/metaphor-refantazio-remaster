@@ -91,16 +91,20 @@ if (-not $Skip -and -not $All) {
     if ($c -eq '2') { $Skip = @('character', 'enemy') }
 }
 $files = $m.Select([string[]]$Skip)
-$parts = $m.PartsFor($files)
 $outRoot = Join-Path $ModsDir "$ModId\MFEssentials\CPK\Remaster"
+# files already installed and identical are skipped; an older release's files lend the entries they already hold,
+# so an update only downloads the parts with the new textures
+Say ''
+$todo = $m.Pending($files, $outRoot)
+$parts = $m.PartsFor($todo)
 
 # --- data parts ---
 New-Item -ItemType Directory -Force -Path $DataDir | Out-Null
 $missing = @($parts | Where-Object { -not (Test-Path (Join-Path $DataDir $_.Name)) -or (Get-Item (Join-Path $DataDir $_.Name)).Length -ne $_.Size })
 $dl = 0; foreach ($p in $missing) { $dl += $p.Size }
-$need = [MetaphorRemaster.Installer]::SumOut($files)
-Say ''
-Say "  to build:  $($files.Count) files, $(Gb $need)"
+$need = [MetaphorRemaster.Installer]::SumOut($todo)
+Say "  up to date: $($files.Count - $todo.Count) files"
+Say "  to build:  $($todo.Count) files, $(Gb $need)"
 Say "  data:      $($parts.Count) parts, $($missing.Count) missing ($(Gb $dl) to download)"
 $drvOut = (Get-Item $ModsDir).PSDrive; $drvData = (Get-Item $DataDir).PSDrive
 if ($drvOut.Name -eq $drvData.Name) { if ($drvOut.Free -lt $need + $dl + 1e9) { Say "  WARNING: drive $($drvOut.Name): has $(Gb $drvOut.Free) free, about $(Gb ($need + $dl)) is needed." 'Yellow' } }
@@ -109,9 +113,14 @@ else {
     if ($drvData.Free -lt $dl + 1e8) { Say "  WARNING: drive $($drvData.Name): has $(Gb $drvData.Free) free, $(Gb $dl) is needed for the download." 'Yellow' }
 }
 if ($missing.Count -gt 0) {
-    if ($NoDownload) { throw "Missing data parts in $DataDir. Download them from $($m.BaseUrl -replace '/download/', '/tag/')" }
+    # parts kept from an earlier release are downloaded from that release
+    $where = @($missing | ForEach-Object { if ($_.Url) { $_.Url } else { "$($m.BaseUrl)/$($_.Name)" } })
+    if ($NoDownload) {
+        Say "  Missing data parts:" 'Yellow'; foreach ($u in $where) { Say "    $u" }
+        throw "Missing data parts in $DataDir."
+    }
     if (-not (Ask "  Download the missing parts from GitHub now?")) {
-        Say "  Put the .bin parts in $DataDir and run the installer again." 'Yellow'; exit 1
+        Say "  Put these .bin parts in $DataDir and run the installer again:" 'Yellow'; foreach ($u in $where) { Say "    $u" }; exit 1
     }
     $i = 0
     foreach ($p in $missing) { $i++; Say "  [$i/$($missing.Count)] downloading $($p.Name)"; $m.Download($p, $DataDir) }
@@ -120,7 +129,7 @@ if ($missing.Count -gt 0) {
 # --- build ---
 Say ''
 Say "  Building into $ModsDir\$ModId ..." 'Cyan'
-$r = $m.Build($Cpk, $DataDir, $outRoot, $files)
+$r = $m.Build($Cpk, $DataDir, $outRoot, $todo)
 $cfgSrc = Join-Path $PSScriptRoot 'ModConfig.json'
 $modDir = Join-Path $ModsDir $ModId
 New-Item -ItemType Directory -Force -Path $modDir | Out-Null
@@ -128,7 +137,7 @@ New-Item -ItemType Directory -Force -Path $modDir | Out-Null
 $icon = Join-Path $PSScriptRoot 'Preview.png'; if (Test-Path $icon) { Copy-Item $icon $modDir -Force }
 
 Say ''
-Say "  built $($r.Built), already up to date $($r.AlreadyThere), game file differs $($r.GameDiffers), failed $($r.Failed)"
+Say "  built $($r.Built), already up to date $($files.Count - $todo.Count + $r.AlreadyThere), game file differs $($r.GameDiffers), failed $($r.Failed)"
 foreach ($msg in $r.Messages | Select-Object -First 15) { Say "    $msg" }
 if ($r.GameDiffers -gt 0) { Say "  $($r.GameDiffers) files were skipped because your game version differs from the one this release was made for. Those textures stay original." 'Yellow' }
 if ($r.Failed -gt 0) {

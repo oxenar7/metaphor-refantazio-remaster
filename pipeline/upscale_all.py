@@ -244,7 +244,7 @@ def phase_pack(cfg, limit):
         nrep = 0
         for k, (s, p, kind) in new.items():
             d = open(p, 'rb').read(); inf = dds_info(d); oi = dds_info(ents[k][1])
-            ok = (1, 2, 4, 8) if kind == 'best' else (1, 2, 4)
+            ok = (1, 2, 4, 8) if kind in ('best', 'special') else (1, 2, 4)   # special: hero props at 8x
             if not inf or not oi or inf['fmt'] != oi['fmt'] or inf['w'] not in [oi['w'] * r for r in ok]: continue
             if inf['w'] * oi['h'] != inf['h'] * oi['w']: continue
             d += b'\0' * (-len(d) % 32)  # the game's own DDS entries are zero-padded to 32 bytes
