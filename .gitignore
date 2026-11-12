@@ -1,0 +1,6 @@
+dist/
+test/
+__pycache__/
+*.pyc
+*.bin
+*.download

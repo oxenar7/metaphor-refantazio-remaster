@@ -1,0 +1,60 @@
+{
+  "ModId": "oxenar7.metaphor.remaster",
+  "ModName": "Metaphor: ReFantazio Remaster",
+  "ModAuthor": "oxenar7",
+  "ModVersion": "@VERSION@",
+  "ModDescription": "Game-wide texture remaster without changing the art style: 2x AI upscale of the low-res colour textures (2x-AnimeSharpV4 Fast RCAN PU by Kim2091), real material grain on wood, ground, stone and plaster (Poly Haven CC0 photos, original palette kept), baked relief on Grand Trad stone, the highest-resolution copy the game ships of each atlas used everywhere, and a new ground and wood retexture for Eht Ria. Needs Metaphor Essentials with Force 4K Assets on.",
+  "ModDll": "",
+  "ModIcon": "",
+  "ModR2RManagedDll32": "",
+  "ModR2RManagedDll64": "",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "Tags": [],
+  "CanUnload": null,
+  "HasExports": null,
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "",
+  "IgnoreRegexes": [
+    ".*\\.json"
+  ],
+  "IncludeRegexes": [
+    "\\.deps\\.json",
+    "\\.runtimeconfig\\.json",
+    "ModConfig\\.json"
+  ],
+  "PluginData": {
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "mrfpc.modloader": {
+          "Config": {
+            "UserName": "DeathChaos25",
+            "RepositoryName": "mrfpc.modloader",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "mrfpc.modloader.ReleaseMetadata.json"
+        },
+        "crifs.v2.hook": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "CriFs.V2.Hook.ReloadedII",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "CriFs.V2.Hook.ReleaseMetadata.json"
+        }
+      }
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [
+    "mrfpc.modloader",
+    "crifs.v2.hook"
+  ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "metaphor.exe"
+  ],
+  "ProjectUrl": "https://github.com/oxenar7/metaphor-refantazio-remaster"
+}
