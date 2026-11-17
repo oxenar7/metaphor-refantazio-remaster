@@ -12,8 +12,10 @@ Reloaded-II mod built on Metaphor Essentials.
 - **Grand Trad stone** gets baked cavity and ambient occlusion, made from the game's own height maps.
 - **Best source everywhere.** The game often ships the same atlas at 1/2 to 1/8 of its size in another place. Every
   copy now uses the sharpest one, for example the shopfronts of Via Sunlumeo.
-- **Eht Ria** gets a new ground (packed earth, grass, jungle soil, sand) and new wood for planks, beams and scaffolding.
-  Its well and church door, which fill the screen, are 8x, with stone crevices baked from the game's own normal map.
+- **Eht Ria is repainted** (1.0.3). Its ground, sand, moss, bridge planks, beams, scaffolding, poles and tree trunks
+  are upscaled from the originals to 2048 px and given a painted finish: the blotches become clean patches of colour
+  with crisp edges and soft brush strokes, like the game's painted skies, instead of photo detail. Its well and church
+  door, which fill the screen, are 8x, with stone crevices baked from the game's own normal map.
 - **Close-up props at 4x** (1.0.1). About 440 small atlases that cutscenes and shops show up close (market stalls,
   furniture, crates, barrels, food) get a second AI pass. Where they are wood, the blocky painting is rebuilt with photo
   grain that follows each plank. Food, cloth and metal are only sharpened.
@@ -21,8 +23,8 @@ Reloaded-II mod built on Metaphor Essentials.
   painted wall.
 - **Althabury** (1.0.2): shopfronts and the close-up paintings at 8x, about 240 more props and building textures at
   4x, and sharper rusted steel on the iron bridge.
-- **Eht Ria details** (1.0.2): church pillars and painted poles at 8x; bridge planks and the grass patches on the
-  ground rebuilt from real photos; bark on the big orange trees; sharper posts, stall, rocks and dragon statue.
+- **Eht Ria details** (1.0.2): church pillars at 8x; the grass patches on the ground rebuilt from a real photo;
+  sharper posts, stall, rocks and dragon statue.
 
 About 35,000 textures in 6,592 game files are changed.
 
@@ -34,7 +36,7 @@ About 35,000 textures in 6,592 game files are changed.
   dependency CRI FileSystem V2 Hook.
 - **Force 4K Assets** turned on in Metaphor Essentials (Reloaded-II, right click it, then *Configure Mod*). Most of
   the changed textures are in the game's 4K set.
-- **About 73 GB of free disk space** during installation: 58 GB for the mod and 14.8 GB for the download. You can
+- **About 75 GB of free disk space** during installation: 59 GB for the mod and 15.1 GB for the download. You can
   delete the download afterwards.
 - Tested on an RTX 4070 (12 GB) at 3440x1440. Some environment textures are now 4096 px. GPUs with less video
   memory have not been tested.
@@ -56,10 +58,11 @@ The installer only writes the new mod folder (`Reloaded-II\Mods\oxenar7.metaphor
 changes nothing in the game folder. To uninstall, delete the mod in Reloaded-II.
 
 - **Update from an earlier version:** download the new installer zip and run its `Install.bat` the same way. Files
-  that did not change are kept and the textures already in your installed files are reused, so going from 1.0.1 to
-  1.0.2 downloads 0.65 GB.
+  that did not change are kept and the textures already in your installed files are reused, so going from 1.0.2 to
+  1.0.3 downloads 0.23 GB.
 - **Manual download:** put the `.bin` files into the installer's `data` folder before running it. It uses them
-  instead of downloading. A full install of 1.0.2 needs the 10 parts of release 1.0.0, the 2 of release 1.0.1 and the 1 of release 1.0.2.
+  instead of downloading. A full install of 1.0.3 needs the 10 parts of release 1.0.0, the 2 of release 1.0.1, the 1 of release 1.0.2 and the
+  1 of release 1.0.3.
   If any are missing, `Install.bat -NoDownload` lists their links.
 - **Leave characters and enemies original:** pick option 2 in the installer. That saves 7.8 GB.
 - **Game update:** run the installer again. Files whose game original changed are skipped and stay vanilla until a
@@ -79,7 +82,7 @@ changes nothing in the game folder. To uninstall, delete the mod in Reloaded-II.
   [4x-UltraSharpV2 Lite](https://huggingface.co/Kim2091/UltraSharpV2) upscaling models (both CC BY-NC-SA 4.0).
 - **[Poly Haven](https://polyhaven.com)** (CC0): rough_wood, weathered_planks, weathered_brown_planks,
   forest_ground_04, leafy_grass, mud_forest, forest_leaves_02, coast_sand_04, rocky_terrain_02, rock_face_03,
-  painted_plaster_wall, green_metal_rust, grass_ground, bark_willow_02.
+  painted_plaster_wall, green_metal_rust, grass_ground.
 - **DeathChaos**: Metaphor Essentials. **Sewer56**: Reloaded-II and CRI FileSystem V2 Hook.
 - **Microsoft**: [DirectXTex](https://github.com/microsoft/DirectXTex) texconv, used to build the textures.
 - **ATLUS / SEGA**: Metaphor: ReFantazio and all of its original art.
