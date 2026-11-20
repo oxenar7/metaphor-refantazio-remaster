@@ -25,8 +25,21 @@ Reloaded-II mod built on Metaphor Essentials.
   4x, and sharper rusted steel on the iron bridge.
 - **Eht Ria details** (1.0.2): church pillars at 8x; the grass patches on the ground rebuilt from a real photo;
   sharper posts, stall, rocks and dragon statue.
+- **The 600 blurriest surfaces up to 4096 px** (1.0.4). Every field model was measured against how close the camera
+  gets to it from the walkable areas, to find the surfaces whose texture is stretched the most on screen: walls, floors,
+  roofs, stairs, doors, shopfronts, rock faces. The 600 worst are rebuilt from the originals with 4x-UltraSharpV2 and
+  back-projection, up to 4096 px, and their normal maps get the matching fine relief. Signs, paintings and ornaments
+  get a gentler AI step so it does not invent detail.
+- **Nothing stays at 256 px or less** (1.0.4). About 470 more small colour textures that were still at 128 or 256 px
+  are upscaled to at least 512.
+- **Althabury inn and similar** (1.0.4): the azaleas, the ground and the maple trunks around the inn, plus the same
+  kinds of flowers, leaves, bark and ground elsewhere, are upscaled and given the painted finish of Eht Ria. The
+  castle-style block walls (the inn's brick wall among them) are rebuilt at 2048 px with real block shapes, bevels and
+  deep relief.
+- **Normal-map fix** (1.0.4): the photo relief that earlier versions added to about 1,600 normal maps had its vertical
+  direction flipped (OpenGL style instead of the game's DirectX style), so some bumps read as dents. Fixed.
 
-About 35,000 textures in 6,592 game files are changed.
+About 36,500 textures in 6,592 game files are changed.
 
 ## Requirements
 
@@ -36,10 +49,10 @@ About 35,000 textures in 6,592 game files are changed.
   dependency CRI FileSystem V2 Hook.
 - **Force 4K Assets** turned on in Metaphor Essentials (Reloaded-II, right click it, then *Configure Mod*). Most of
   the changed textures are in the game's 4K set.
-- **About 75 GB of free disk space** during installation: 59 GB for the mod and 15.1 GB for the download. You can
-  delete the download afterwards.
-- Tested on an RTX 4070 (12 GB) at 3440x1440. Some environment textures are now 4096 px. GPUs with less video
-  memory have not been tested.
+- **About 170 GB of free disk space** for a new install: 134 GB for the mod and 35.7 GB for the download. Updating
+  from 1.0.3 needs about 100 GB free. You can delete the download afterwards.
+- Tested on an RTX 4070 (12 GB) at 3440x1440. Hundreds of environment surfaces are now 4096 px. GPUs with less
+  video memory have not been tested.
 
 ## Install
 
@@ -58,13 +71,13 @@ The installer only writes the new mod folder (`Reloaded-II\Mods\oxenar7.metaphor
 changes nothing in the game folder. To uninstall, delete the mod in Reloaded-II.
 
 - **Update from an earlier version:** download the new installer zip and run its `Install.bat` the same way. Files
-  that did not change are kept and the textures already in your installed files are reused, so going from 1.0.2 to
-  1.0.3 downloads 0.23 GB.
+  that did not change are kept and the textures already in your installed files are reused, so going from 1.0.3 to
+  1.0.4 downloads 20.6 GB.
 - **Manual download:** put the `.bin` files into the installer's `data` folder before running it. It uses them
-  instead of downloading. A full install of 1.0.3 needs the 10 parts of release 1.0.0, the 2 of release 1.0.1, the 1 of release 1.0.2 and the
-  1 of release 1.0.3.
+  instead of downloading. A full install of 1.0.4 needs the 10 parts of release 1.0.0, the 2 of release 1.0.1, the 1 of release 1.0.2, the
+  1 of release 1.0.3 and the 15 of release 1.0.4.
   If any are missing, `Install.bat -NoDownload` lists their links.
-- **Leave characters and enemies original:** pick option 2 in the installer. That saves 7.8 GB.
+- **Leave characters and enemies original:** pick option 2 in the installer. That saves 7.9 GB.
 - **Game update:** run the installer again. Files whose game original changed are skipped and stay vanilla until a
   new release.
 - **Command line:** `Install.bat -GameDir <folder with base.cpk> -ModsDir <Reloaded-II Mods> -Skip character,enemy -All`.
